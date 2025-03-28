@@ -153,6 +153,7 @@
           hooks = {
             actionlint.enable = true;
             alejandra.enable = true;
+            markdownlint.enable = true;
             nil.enable = true;
           };
         };
