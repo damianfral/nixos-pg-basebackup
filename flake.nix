@@ -160,6 +160,7 @@
       in {
         devShells.default =
           pkgs.mkShell {shellHook = precommitCheck.shellHook;};
+        checks = {inherit precommitCheck;};
       }
     );
 }
