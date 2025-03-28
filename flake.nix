@@ -49,7 +49,7 @@
             rm -r $BACKUP_DIR
 
             # Sync to S3
-            echo "Pushing $BACKUP_FILE to ${s3Bucket}"
+            echo "Pushing $BACKUP_FILE to ${cfg.s3Bucket}"
             ${pkgs.awscli2}/bin/aws s3 sync --include "*.tar.zst" \
                $BACKUP_DIR_BASE s3://${cfg.s3Bucket}
             echo "Backup uploaded"
