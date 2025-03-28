@@ -1,0 +1,17 @@
+name: build-project
+on: push
+#
+jobs:
+  flake-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - uses: cachix/install-nix-action@master
+      - run: nix flake check
+
+  build-dev-shell:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - uses: cachix/install-nix-action@master
+      - run: nix build .#devShells.x86_64-linux.default
